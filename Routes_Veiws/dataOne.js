@@ -4,11 +4,8 @@ const pokemonBoosterPacks = require("../Data/dataOne");
 
 // GET /pokemonBoosterPacks
 router.get("/pokemonBoosterPacks", (req, res) => {
-    res.json(pokemonBoosterPacks);
+  res.json(pokemonBoosterPacks);
 });
-
-
-
 
 // Export router
 module.exports = router;

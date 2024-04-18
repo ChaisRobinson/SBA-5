@@ -33,11 +33,16 @@ app.use("/mtgBoosterPacks", (req, res) => {
   res.json(mtgBoosterPacks);
 });
 
+// POST Routes
+
+// PUT Routes
+
+// DELETE Routes
+
 // Home Route
 app.get("/", (req, res) => {
   res.send("This is Chais' Card Shop");
 });
-
 
 // Error Route
 app.use((req, res) => {

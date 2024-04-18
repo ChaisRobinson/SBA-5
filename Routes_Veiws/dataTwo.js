@@ -4,14 +4,8 @@ const yugiohBoosterPacks = require("../Data/dataTwo");
 
 // GET /yugiohBoosterPacks
 router.get("/yugiohBoosterPacks", (req, res) => {
-    res.json(yugiohBoosterPacks);
+  res.json(yugiohBoosterPacks);
 });
-
-
-
-
-
-
 
 // Export router
 module.exports = router;
