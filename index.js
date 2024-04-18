@@ -8,10 +8,21 @@ const pokemonBoosterPacks = require("./Data/dataOne");
 const yugiohBoosterPacks = require("./Data/dataTwo");
 const mtgBoosterPacks = require("./Data/dataThree");
 
+//import routes
+const pokemonRoutes = require("./Routes_Veiws/dataOne");
+const yugiohRoutes = require("./Routes_Veiws/dataTwo");
+const mtgRoutes = require("./Routes_Veiws/dataThree");
+app.use("/pokemonBoosterPacks", pokemonRoutes);
+app.use("/yugiohBoosterPacks", yugiohRoutes);
+app.use("/mtgBoosterPacks", mtgRoutes);
+
 //Midelware
 app.use(express.json());
 
 // Routes
+app.use("/pokemonBoosterPacks", (req, res) => {
+  res.json(pokemonBoosterPacks);
+});
 
 // Home Route
 app.get("/", (req, res) => {
