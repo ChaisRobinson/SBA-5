@@ -3,53 +3,37 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-//import data
+// Import data
 const pokemonBoosterPacks = require("./Data/dataOne");
 const yugiohBoosterPacks = require("./Data/dataTwo");
 const mtgBoosterPacks = require("./Data/dataThree");
 
-//import routes
+// Import routes
 const pokemonRoutes = require("./Routes_Veiws/dataOne");
 const yugiohRoutes = require("./Routes_Veiws/dataTwo");
 const mtgRoutes = require("./Routes_Veiws/dataThree");
-app.use("/pokemonBoosterPacks", pokemonRoutes);
-app.use("/yugiohBoosterPacks", yugiohRoutes);
-app.use("/mtgBoosterPacks", mtgRoutes);
+
 
 //Midelware
 app.use(express.json());
 
-// Routes
-// GET Routes
-app.use("/pokemonBoosterPacks", (req, res) => {
-  res.json(pokemonBoosterPacks);
-});
+// Mount Routes
+app.use("/pokemonBoosterPacks", pokemonRoutes);
+app.use("/yugiohBoosterPacks", yugiohRoutes);
+app.use("/mtgBoosterPacks", mtgRoutes);
 
-app.use("/yugiohBoosterPacks", (req, res) => {
-  res.json(yugiohBoosterPacks);
-});
-
-app.use("/mtgBoosterPacks", (req, res) => {
-  res.json(mtgBoosterPacks);
-});
-
-// POST Routes
-
-// PUT Routes
-
-// DELETE Routes
 
 // Home Route
 app.get("/", (req, res) => {
   res.send("This is Chais' Card Shop");
 });
 
-// Error Route
+// 404 Route
 app.use((req, res) => {
   res.status(404).send("Page not found");
 });
 
-// Error Handler middleware
+// Error Handler Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
