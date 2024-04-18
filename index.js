@@ -20,8 +20,17 @@ app.use("/mtgBoosterPacks", mtgRoutes);
 app.use(express.json());
 
 // Routes
+// GET Routes
 app.use("/pokemonBoosterPacks", (req, res) => {
   res.json(pokemonBoosterPacks);
+});
+
+app.use("/yugiohBoosterPacks", (req, res) => {
+  res.json(yugiohBoosterPacks);
+});
+
+app.use("/mtgBoosterPacks", (req, res) => {
+  res.json(mtgBoosterPacks);
 });
 
 // Home Route
