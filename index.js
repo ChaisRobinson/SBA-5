@@ -1,8 +1,10 @@
 // Start Express server
 const express = require("express");
 const app = express();
-const port = 3000;
+process.env.NODE_ENV = "development";
+const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
+
 
 // Import data
 const pokemonBoosterPacks = require("./Data/dataOne");
@@ -20,23 +22,23 @@ const mtgRoutes = require("./Routes_Veiws/dataThree");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
+//Midelware
 // New logging middleware to help us keep track of
 // requests during testing!
 app.use((req, res, next) => {
-    const time = new Date();
+  const time = new Date();
 
-    console.log(
-        `-----
+  console.log(
+    `-----
   ${time.toLocaleTimeString()}: Received a ${req.method} request to ${req.url}.`
-    );
-    if (Object.keys(req.body).length > 0) {
-        console.log("Containing the data:");
-        console.log(`${JSON.stringify(req.body)}`);
-    }
-    next();
+  );
+  if (Object.keys(req.body).length > 0) {
+    console.log("Containing the data:");
+    console.log(`${JSON.stringify(req.body)}`);
+  }
+  next();
 });
 
-//Midelware
 //app.use(express.json());
 
 // Mount Routes

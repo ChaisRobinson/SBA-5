@@ -32,8 +32,9 @@ router.put("/:id", (req, res) => {
   const { name, price } = req.body;
   const index = pokemonBoosterPacks.findIndex((pack) => pack.id === id);
   if (index !== -1) {
-    pokemonBoosterPacks[index] = { id, name, price };
-    res.json(pokemonBoosterPacks[index]);
+    const updatedPack = { ...pokemonBoosterPacks[index], name, price };
+    pokemonBoosterPacks[index] = updatedPack;
+    res.json(updatedPack);
   } else {
     res.status(404).json({ error: "Pokemon not found" });
   }
