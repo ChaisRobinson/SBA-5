@@ -15,6 +15,7 @@ const pokemonRoutes = require("./Routes_Veiws/dataOne");
 const yugiohRoutes = require("./Routes_Veiws/dataTwo");
 const mtgRoutes = require("./Routes_Veiws/dataThree");
 
+
 // We use the body-parser middleware FIRST so that
 // we have access to the parsed data within our routes.
 // The parsed data will be located in "req.body".
@@ -45,6 +46,7 @@ app.use("/pokemonBoosterPacks", pokemonRoutes);
 app.use("/yugiohBoosterPacks", yugiohRoutes);
 app.use("/mtgBoosterPacks", mtgRoutes);
 
+
 // Yu-Gi-Oh! Template Engine
 // Require the filesystem module
 const fs = require("fs");
@@ -68,7 +70,7 @@ app.engine("yu_gi_oh", (filePath, options, callback) => {
 
 app.set("views", "./views"); // Specify the views directory
 app.set("view engine", "yu_gi_oh"); // Register the template engine
-app.use(express.static(__dirname + '/public')); // Serve static files from the styles directory
+app.use(express.static(__dirname + "/public")); // Serve static files from the styles directory
 
 // Home Route
 app.get("/", (req, res) => {
