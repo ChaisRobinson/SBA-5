@@ -15,7 +15,6 @@ const pokemonRoutes = require("./Routes_Veiws/dataOne");
 const yugiohRoutes = require("./Routes_Veiws/dataTwo");
 const mtgRoutes = require("./Routes_Veiws/dataThree");
 
-
 // We use the body-parser middleware FIRST so that
 // we have access to the parsed data within our routes.
 // The parsed data will be located in "req.body".
@@ -45,7 +44,6 @@ app.use((req, res, next) => {
 app.use("/pokemonBoosterPacks", pokemonRoutes);
 app.use("/yugiohBoosterPacks", yugiohRoutes);
 app.use("/mtgBoosterPacks", mtgRoutes);
-
 
 // Yu-Gi-Oh! Template Engine
 // Require the filesystem module
