@@ -26,19 +26,23 @@ router.post("/", (req, res) => {
   res.status(201).json(newPokemon);
 });
 
+
+
 // PUT /api/pokemon/:id
 router.put("/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const { name, price } = req.body;
   const index = pokemonBoosterPacks.findIndex((pack) => pack.id === id);
   if (index !== -1) {
-    const updatedPack = { ...pokemonBoosterPacks[index], name, price };
+    const updatedPack = { ...pokemonBoosterPacks[index], ...req.body };
     pokemonBoosterPacks[index] = updatedPack;
     res.json(updatedPack);
   } else {
     res.status(404).json({ error: "Pokemon not found" });
   }
 });
+
+
+
 
 // DELETE /api/pokemon/:id
 router.delete("/:id", (req, res) => {
