@@ -68,6 +68,7 @@ app.engine("yu_gi_oh", (filePath, options, callback) => {
 
 app.set("views", "./views"); // Specify the views directory
 app.set("view engine", "yu_gi_oh"); // Register the template engine
+app.use(express.static(__dirname + '/public')); // Serve static files from the styles directory
 
 // Home Route
 app.get("/", (req, res) => {
