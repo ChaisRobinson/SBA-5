@@ -26,8 +26,6 @@ router.post("/", (req, res) => {
   res.status(201).json(newPokemon);
 });
 
-
-
 // PUT /api/pokemon/:id
 router.put("/:id", (req, res) => {
   const id = parseInt(req.params.id);
@@ -40,9 +38,6 @@ router.put("/:id", (req, res) => {
     res.status(404).json({ error: "Pokemon not found" });
   }
 });
-
-
-
 
 // DELETE /api/pokemon/:id
 router.delete("/:id", (req, res) => {
