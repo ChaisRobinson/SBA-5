@@ -29,12 +29,5 @@ Utilizing a template engine with Express.js, the application renders views to pr
 Code Organization and Error Handling:
 Adhering to best practices, the application maintains clean and organized code. It runs smoothly without errors, ensuring a seamless user experience. Any potential issues are effectively managed and addressed within the codebase.
 
-Bonus Objectives:
-Regular Expressions Usage
-To enhance route path handling, I've incorporated practical usage of regular expressions where appropriate. This adds flexibility and efficiency to route management within the application.
-
-Third-Party Package Integration:
-In pursuit of innovation, I've integrated a third-party Node package for specific functionalities. This demonstrates a willingness to explore and leverage external resources to enhance application capabilities.
-
 Conclusion:
 In conclusion, the Express Server Application project has been a fulfilling experience, allowing me to demonstrate my expertise in Node.js and Express.js while exploring new avenues for improvement. I look forward to applying these learnings in future endeavors.
